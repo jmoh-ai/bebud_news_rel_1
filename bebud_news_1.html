@@ -102,8 +102,8 @@ function renderCat(i){
   const cat=CATS[i];
   document.getElementById('kw-row').innerHTML=cat.kws.map(k=>`<span class="kw-chip">${k}</span>`).join('');
   const q=encodeURIComponent(cat.kws.join(' OR '));
-  const googleUrl=`https://www.google.com/search?q=${q}&tbm=nws&tbs=sbd:1`;
-  const googleEcoUrl=`https://www.google.com/search?q=${q}+site:hankyung.com+OR+site:mk.co.kr+OR+site:etoday.co.kr+OR+site:heraldcorp.com+OR+site:edaily.co.kr&tbm=nws&tbs=sbd:1`;
+  const googleUrl=`https://www.google.com/search?q=${q}&tbm=nws`;
+  const googleEcoUrl=`https://www.google.com/search?q=${q}+site:hankyung.com+OR+site:mk.co.kr+OR+site:etoday.co.kr+OR+site:heraldcorp.com+OR+site:edaily.co.kr&tbm=nws`;
   document.getElementById('v1-cards').innerHTML=`
     <div class="card" onclick="window.open('${googleUrl}','_blank')">
       <div class="card-title">📰 ${cat.label} 최신 뉴스 보기</div>
@@ -131,7 +131,7 @@ function searchMeeting(){
   const kw=document.getElementById('meeting-kw').value.trim();
   if(!kw)return;
   const q=encodeURIComponent(kw);
-  const googleUrl=`https://www.google.com/search?q=${q}&tbm=nws&tbs=sbd:1`;
+  const googleUrl=`https://www.google.com/search?q=${q}&tbm=nws`;
   document.getElementById('v2-cards').innerHTML=`
     <div class="card" onclick="window.open('${googleUrl}','_blank')">
       <div class="card-title">📰 "${kw}" 최신 뉴스 보기</div>
